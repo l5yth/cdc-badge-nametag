@@ -2,6 +2,10 @@
 Quality Control firmware for the CDC electronic badge.
 Sets sane defaults and tests chips and peripherals.
 
+## ESP32-S3
+- [  ] Use GPIO matrix/IO MUX to configure pins to the desired function
+  (check schematics).
+
 ## Charging IC
 [BQ25895](https://www.ti.com/product/BQ25895)
 - [  ] Disable ILIM pin on REG00[6]
