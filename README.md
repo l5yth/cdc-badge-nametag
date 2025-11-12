@@ -25,6 +25,7 @@ Sets sane defaults and tests chips and peripherals.
 
 ## Secure Element
 - [  ] Establish secure channel and verify basic functionalities.
+- [  ] Put in sleep mode to reduce power usage.
 
 ## E-Paper Display
 - [  ] Draw something on the screen.
