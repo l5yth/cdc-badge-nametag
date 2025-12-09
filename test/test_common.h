@@ -1,8 +1,9 @@
 #ifndef TEST_COMMON_H
 #define TEST_COMMON_H
-
-#include <Arduino.h>
 #include <unity.h>
+#include <Arduino.h>
+#include <Wire.h>
+#include <SPI.h>
 
 void setup_usb_serial() {
     Serial.begin(115200);
