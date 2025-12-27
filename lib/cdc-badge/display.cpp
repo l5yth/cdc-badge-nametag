@@ -27,14 +27,15 @@ void display_init() {
 
     display.setRotation(1);
     display.setFont(&FreeMonoBold9pt7b);
-    display.setTextColor(GxEPD_WHITE);
+    display.setTextColor(GxEPD_WHITE);  // White text on black background
 
-    display.setFullWindow();
+    // Use partial window for smooth, flicker-free updates (ideal for menus)
+    // This avoids the heavy blinking of full refresh mode
+    display.setPartialWindow(0, 0, display.width(), display.height());
+    
     display.firstPage();
     do {
-        display.fillScreen(GxEPD_BLACK);  // Black background
-        display.setTextColor(GxEPD_WHITE);  // White text
-
+        display.fillScreen(GxEPD_BLACK);
         display.setCursor(10, 30);
         display.print(DISPLAY_LINE_1);
 

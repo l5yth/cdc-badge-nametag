@@ -8,9 +8,9 @@
 
 #define DISPLAY_BACKGROUND_LIGHT_LEVEL 5 // 0-1023
 
-#define DISPLAY_LINE_1 "CDC badge 39c3"
-#define DISPLAY_LINE_2 "ESP32S3, E-INK and"
-#define DISPLAY_LINE_3 "TROPIC01"
+#define DISPLAY_LINE_1 "Don't trust, verify!"
+#define DISPLAY_LINE_2 "TROPIC01 auditable secure"
+#define DISPLAY_LINE_3 "element on board"
 
 void display_init();
 void display_show();
