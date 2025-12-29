@@ -22,6 +22,34 @@ void app_setup(app_state_t *state) { state->is_initialized = true; }
 
 void app_loop(app_state_t *state) {
 
+    // --- Pulsing Logic ---
+    static unsigned long last_pulse_time = 0;
+    static int pulse_direction = 1; // 1 for up, -1 for down
+    static int pulse_value = 0;
+    const int pulse_speed = 15;      // Increase to pulse faster
+    const int pulse_interval = 15;  // Milliseconds between steps
+
+    if (millis() - last_pulse_time > pulse_interval) {
+        last_pulse_time = millis();
+        
+        pulse_value += (pulse_speed * pulse_direction);
+
+        // Reverse direction at limits
+        if (pulse_value >= 1023) {
+            pulse_value = 1023;
+            pulse_direction = -1;
+        } else if (pulse_value <= 0) {
+            pulse_value = 0;
+            pulse_direction = 1;
+        }
+
+        set_setting_brightness(pulse_value);
+        display_show();
+        // Note: Frequent display_show() calls might cause flickering
+        // depending on your hardware.
+    }
+    // --- End Pulsing Logic ---
+
     char pressed = pin_expander_process_irq();
     if (pressed != 'x') {
         Serial.print("Button pressed: ");
