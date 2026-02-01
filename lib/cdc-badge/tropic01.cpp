@@ -13,8 +13,8 @@
 #define PAIRING_KEY_PUB sh0pub_prod0
 #define PAIRING_KEY_SLOT TR01_PAIRING_KEY_SLOT_INDEX_0
 
-// Constructor: csPin, rngSeed (use ESP32 hardware RNG), spiInstance
-Tropic01 tropic01(TR01_CS_PIN, esp_random(), SPI_Bus);
+// Constructor: csPin, spiInstance (SPI settings use library defaults)
+Tropic01 tropic01(TR01_CS_PIN, SPI_Bus);
 lt_ret_t returnVal;
 psa_status_t mbedtlsInitStatus;
 
